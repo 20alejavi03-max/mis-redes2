@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Redes</title>
+  <meta property="og:title" content="Mis Redes Sociales">
+  <meta property="og:description" content="Conéctate conmigo en todas mis plataformas">
+  <meta property="og:image" content="https://i.imgur.com/s9koygk.jpeg">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --bg: #f2f2f2;
+      --text: #000000;
+      --glass: rgba(255, 255, 255, 0.15);
+      --backdrop: blur(10px);
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #ffffff;
+      --glass: rgba(0, 0, 0, 0.3);
+      --backdrop: blur(10px);
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      transition: background 0.5s, color 0.5s;
+      overflow-x: hidden;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--text);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin-bottom: 25px;
+    }
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 320px;
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 12px 0;
+      padding: 15px;
+      width: 100%;
+      border-radius: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: var(--glass);
+      backdrop-filter: var(--backdrop);
+    }
+    .link img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      border: 2px solid white;
+      border-radius: 5px;
+      background: white;
+    }
+    .link:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .twitch { background: #9146FF; }
+    .kick   { background: #53FC18; color: black; }
+    .youtube{ background: #FF0000; }
+    .tiktok { background: #000000; }
+    .instagram {
+      background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    }
+    .x { background: #000000; }
+    .extra-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .extra-btn:hover {
+      transform: scale(1.05);
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body class="fade-in">
+  <div class="profile-container">
+    <img src="https://i.imgur.com/s9koygk.jpeg" alt="Foto de perfil" class="profile-pic">
+  </div>
+  <h1>🌐 Mis Redes Sociales</h1>
+  <div class="links-container">
+    <a class="link twitch" href="https://www.twitch.tv/janoogr" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png" alt="Twitch"> Twitch
+    </a>
+    <a class="link kick" href="https://kick.com/janoogr" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/kick.svg" alt="Kick"> Kick
+    </a>
+    <a class="link youtube" href="https://www.youtube.com/@Janoogr03" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube
+    </a>
+    <a class="link tiktok" href="https://tiktok.com/@janoogr" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"> TikTok
+    </a>
+    <a class="link instagram" href="https://www.instagram.com/janogarcia03?igsh=MTlrNjgweHo5aXlpYg==" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Instagram
+    </a>
+    <a class="link x" href="https://x.com/Jano_aw?t=RMjQwK1LnxWDUKVIALJNYA&s=09" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X"> X
+    </a>
+  </div>
+  <button class="extra-btn" onclick="toggleTheme()">🌙 Cambiar tema</button>
+  <button class="extra-btn" onclick="copyLink()">📋 Copiar link de la página</button>
+  <div class="footer">Hecho con ❤️ por Jano</div>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert("✅ Link copiado al portapapeles");
+      });
+    }
+  </script>
+</body>
+</html>
